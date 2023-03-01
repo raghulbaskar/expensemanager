@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect} from 'react';
 
 import NewExpense from './components/NewExpense/NewExpense';
 import Expenses from './components/Expenses/Expenses';
 import FooterCard from './components/FooterCard';
+const TITLE = 'App';
 const DUMMY_EXPENSES = [
   {
     id: 'e1',
@@ -33,7 +34,9 @@ const DUMMY_EXPENSES = [
 
 const App = () => {
   const [expenses, setExpenses] = useState(DUMMY_EXPENSES);
-
+  useEffect(() => {
+    document.title = "Expense Calculator";  
+  }, []);
   const addExpenseHandler = (expense) => {
     setExpenses((prevExpenses) => {
       return [expense, ...prevExpenses];
@@ -48,7 +51,9 @@ const App = () => {
   // );
 
   return (
+    
     <div>
+       
       <NewExpense onAddExpense={addExpenseHandler} />
       <Expenses items={expenses} />
       <FooterCard/>
