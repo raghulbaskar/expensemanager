@@ -3,7 +3,7 @@ import React, { useState, useEffect} from 'react';
 import NewExpense from './components/NewExpense/NewExpense';
 import Expenses from './components/Expenses/Expenses';
 import FooterCard from './components/FooterCard';
-const TITLE = 'App';
+
 const DUMMY_EXPENSES = [
   {
     id: 'e1',
